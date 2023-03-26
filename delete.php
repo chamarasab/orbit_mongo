@@ -1,7 +1,7 @@
 <?php
 session_start();
-if ($_SERVER["REQUEST_METHOD"] == "POST") {}
-else {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+} else {
     include_once('connection.php');
 
     $id = $_GET["id"];
@@ -13,7 +13,7 @@ else {
             $id = $_GET["id"];
 
             //$delete_query = "DELETE FROM users  where id = '".$id."'";
-            $result = $users->deleteOne(["id"=>$id]);
+            $result = $users->deleteOne(["id" => $id]);
 
             if ($result) {
                 $_SESSION["message"] = "delete_success";
