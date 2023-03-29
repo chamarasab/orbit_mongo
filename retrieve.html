@@ -284,7 +284,9 @@
         $(function () {
             $("table tr").click(function () {
                 if (this.cells[0].innerHTML >= 0) {
-                    window.location.replace("http://localhost/orbit_mongo/index.php?id=" + this.cells[0].innerHTML);
+                    var uid =  parseInt(this.cells[0].innerHTML);
+                    var str = "http://localhost/orbit_mongo/index.php?id=" + uid;
+                    window.location.replace(decodeURIComponent(str));
                 }
             });
         });
